@@ -1,0 +1,162 @@
+{
+	"info": {
+		"_postman_id": "333c11f3-cc6d-4dda-a8e5-15c2e714e926",
+		"name": "codeChallenge",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27477653",
+		"_collection_link": "https://blue-eclipse-617898.postman.co/workspace/nativelabs~130419d6-20d1-444a-95df-67a7815c6a8a/collection/27477653-333c11f3-cc6d-4dda-a8e5-15c2e714e926?action=share&source=collection_link&creator=27477653"
+	},
+	"item": [
+		{
+			"name": "CrearSolicitud",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nombre\": \"Riegel\",\r\n  \"apellido\": \"Ramos\",\r\n  \"identificacion\": \"ABC129\",\r\n  \"edad\": 21,\r\n  \"afinidad_magica\": \"Viento\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url_base}}{{api_version}}solicitud",
+					"host": [
+						"{{url_base}}{{api_version}}solicitud"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ActualizarSolicitud",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"nombre\": \"Arioto\",\r\n        \"apellido\": \"Ramos\",\r\n        \"identificacion\": \"ABC123\",\r\n        \"edad\": 34,\r\n        \"afinidad_magica\": \"Agua\",\r\n        \"id\": 1,\r\n        \"grimorio\": {\r\n            \"tipo\": \"Trébol de dos hojas\",\r\n            \"rareza\": 1\r\n        }\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url_base}}{{api_version}}solicitud/1",
+					"host": [
+						"{{url_base}}{{api_version}}solicitud"
+					],
+					"path": [
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ActualizarEstatus",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"status\": \"aceptado\"\r\n  //\"status\": \"rechazado\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url_base}}{{api_version}}solicitud/9/estatus",
+					"host": [
+						"{{url_base}}{{api_version}}solicitud"
+					],
+					"path": [
+						"9",
+						"estatus"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EliminarSolicitud",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{url_base}}{{api_version}}solicitud/1",
+					"host": [
+						"{{url_base}}{{api_version}}solicitud"
+					],
+					"path": [
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ConsultarSolicitud",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nombre\": \"Arioto\",\r\n  \"apellido\": \"Ramos\",\r\n  \"identificacion\": \"ABC123\",\r\n  \"edad\": 18,\r\n  \"afinidad_magica\": \"Oscuridad\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url_base}}{{api_version}}solicitudes",
+					"host": [
+						"{{url_base}}{{api_version}}solicitudes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AsignarGrimorio",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nombre\": \"Arioto\",\r\n  \"apellido\": \"Ramos\",\r\n  \"identificacion\": \"ABC123\",\r\n  \"edad\": 18,\r\n  \"afinidad_magica\": \"Oscuridad\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url_base}}{{api_version}}asignaciones?id=7",
+					"host": [
+						"{{url_base}}{{api_version}}asignaciones"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "7"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
